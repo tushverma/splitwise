@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "a66159bd-bde3-4f2f-9c0a-6adcc5bd6c76",
+		"name": "SplitwiseApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"abc2@gmail.com\",\n    \"name\": \"ABC2\",\n    \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/createUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Group",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"group_name\": \"test1\",\n    \"members\": [\n        \"abc@gmail.com\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/createGroup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"createGroup"
+					],
+					"query": [
+						{
+							"key": "group_name",
+							"value": "test1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add member to Group",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"group_name\":\"test1\",\n    \"user_email\": \"abc2@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/addUserToGroup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"addUserToGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Group Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/groupDetails?name=test1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"groupDetails"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Group Members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/showGroupMembers?name=test1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"showGroupMembers"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/userDetails?email=abc@gmail.com",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"userDetails"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "abc@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Personal Expense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"users\" : [\n        \"abc@gmail.com\",\n        \"abc2@gmail.com\"\n    ],\n    \"description\": \"Party expense2\",\n    \"amount\": 500,\n    \"paid_by\": \"abc@gmail.com\",\n    \"name\": \"expense2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/addExpense",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"addExpense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Group Expense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"users\" : [\n        \"abc@gmail.com\",\n        \"abc2@gmail.com\"\n    ],\n    \"description\": \"Party expense123\",\n    \"amount\": 1400,\n    \"paid_by\": \"abc@gmail.com\",\n    \"group_name\": \"test1\",\n    \"name\":\"expense12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/addExpense",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"addExpense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/deleteUser?email=abc@gmail.com",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"deleteUser"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "abc@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Group",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/deleteGroup?name=test1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"deleteGroup"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Record Personal Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from_user\": \"abc2@gmail.com\",\n    \"to_user\": \"abc@gmail.com\",\n    \"amount\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/recordPayment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recordPayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Record Expense Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from_user\": \"abc2@gmail.com\",\n    \"to_user\": \"abc@gmail.com\",\n    \"amount\": 700,\n    \"group_name\": \"test1\",\n    \"expense_name\":\"expense1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/recordPayment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recordPayment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
