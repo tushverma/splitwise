@@ -8,7 +8,7 @@ names have been used as unique ids just for the sake of presentation, real world
 
 ---
 
-##Setup
+## Setup
 
 1. Docker Based
    #### Prerequisites
@@ -41,7 +41,7 @@ Variable Name = url
 
 Variable Value = http://127.0.0.1:8000/api [local setup] or http://0.0.0.0:8000/api [for docker setup]
 
-##The API Supports the below operations though rest endpoints:
+## The API Supports the below operations though rest endpoints:
 1. Create User [/createUser]
 2. Create Group [/createGroup]
 3. Add member to group [/addUserToGroup]
